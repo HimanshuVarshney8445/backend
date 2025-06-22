@@ -31,12 +31,12 @@
     align-items: center;
     justify-content: center;
     border: 2px solid grey;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
 
 .content:hover{
     box-shadow: 5px 8px 23px grey;
-    transform: translateY(-3px);
+    transform: scale(1.02);
 }
 
 .left{
@@ -54,8 +54,53 @@
     font-size: 23px;
     color: white;
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+.r1:hover{
+    transform: scale3d(1.1, 1.1, 1.1);
 }
 #r2{
     font-size: 27px;
     color: blue;
+}
+
+.error_con{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.error_box{
+    height: 25%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 9px;
+}
+.error_line{
+    font-size: 60px;
+    color: rgb(245, 46, 46);
+}
+.error_stat{
+    font-size: 14px;
+}
+.error_button{
+    height: 2rem;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 46, 46);
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    transition: all 0.18s ease-in-out;
+}
+.error_button:hover{
+    box-shadow: 5px 5px 18px grey;
+    transform: scale(0.95);
 }
