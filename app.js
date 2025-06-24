@@ -8,6 +8,7 @@ const hostRouter = require('./routers/hostRouter');
 app.set('view engine','ejs');
 app.set('views','views');
 
+app.use(express.urlencoded());
 app.use(express.static(path.join(rootDir,'public')));
 app.use(storeRouter);
 app.use(hostRouter);
