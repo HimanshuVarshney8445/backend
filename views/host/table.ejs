@@ -1,0 +1,53 @@
+<%- include('../partials/head') %>
+</head>
+<body>
+
+<div class="marks-wrapper">
+
+    <h2 class="marks-heading">
+      Enter details for <%= studentCount %> students of Class <%= className %>
+    </h2>
+
+    <form action="/submit-marks" method="POST" class="marks-form">
+      <input type="hidden" name="subjectList" value="<%= subjects.join(',') %>">
+      <input type="hidden" name="className" value="<%= className %>">
+
+      <table class="marks-table">
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <% subjects.forEach(subject => { %>
+              <th><%= subject %></th>
+            <% }); %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (let i = 0; i < studentCount; i++) { %>
+            <tr>
+              <td>
+                <input type="text" name="students[<%= i %>][rollNo]" required>
+              </td>
+              <td>
+                <input type="text" name="students[<%= i %>][name]" required>
+              </td>
+              <% subjects.forEach(subject => { %>
+                <td>
+                  <input type="number"
+                         name="students[<%= i %>][marks][<%= subject %>]"
+                         min="0"
+                         required>
+                </td>
+              <% }); %>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+      <button type="submit" class="marks-submit-btn">Submit All Marks</button>
+    </form>
+
+  </div>
+</body>
+</html>

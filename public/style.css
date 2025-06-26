@@ -123,7 +123,7 @@
     border: 2px solid grey;
 }
 .result_inner{
-    height: 30%;
+    height: 35%;
     width: 35%;
     display: flex;
     align-items: center;
@@ -150,4 +150,68 @@
     justify-content: center;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.marks-wrapper {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.marks-heading {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.marks-form {
+    max-width: 95%;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.marks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.marks-table th,
+.marks-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.marks-table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+.marks-table input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.marks-submit-btn {
+    display: block;
+    margin: 30px auto 0;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.marks-submit-btn:hover {
+    background-color: #218838;
 }
