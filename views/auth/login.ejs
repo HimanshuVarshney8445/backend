@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+</head>
+<body>
+    <div class="container">
+        <%- include('../partials/nav') %>
+        </div>
+        <div class="result_lower">
+            <p class="result_para">Login Page</p>
+            <div class="result_inner">
+                <form action="/login" method="POST">
+                    <div class="form_inside">
+                        <input type="text" class="result_text" name="userName" placeholder="User Name" required>
+                        <input type="password" class="result_text" name="password" placeholder="Password" required>
+                        <button type="submit" class="error_button" style="background-color: rgb(95, 199, 244);border: none;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
