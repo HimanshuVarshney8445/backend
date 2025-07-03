@@ -123,8 +123,10 @@
     border: 2px solid grey;
 }
 .result_inner{
-    height: 35%;
+    height: auto;
     width: 35%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -214,4 +216,11 @@
 
 .marks-submit-btn:hover {
     background-color: #218838;
+}
+.content {
+    /* ...existing code... */
+    background-image: url('/school-image-750x420.jpg'); /* or '/images/school-image-750x420.jpg' */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
