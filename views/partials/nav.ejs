@@ -4,26 +4,35 @@
             <i class="fa-solid fa-house"></i>
             <a href="/" class="r1">dashboard</a>
         </div>
-        <div class="special r1" style="color: #ffff; font-size: 20px;">
-            <i class="fa-solid fa-plus"></i>
-            <a href="/add-result" class="r1">add result</a>
-        </div>
-        <div class="special r1" style="color: #ffff; font-size: 20px;">
-            <i class="fa-solid fa-eye"></i>
-            <a href="/view-result" class="r1">view result</a>
-        </div>
-        <div class="special r1" style="color: #ffff; font-size: 20px;">
-            <i class="fa-solid fa-download" style="color: #ffff; font-size: 20px;"></i>
-            <a href="/download" class="r1">download</a>
-        </div>
+        <% if (authentication) { %>
+            <div class="special r1" style="color: #ffff; font-size: 20px;">
+                <i class="fa-solid fa-plus"></i>
+                <a href="/add-result" class="r1">add result</a>
+            </div>
+            <div class="special r1" style="color: #ffff; font-size: 20px;">
+                <i class="fa-solid fa-eye"></i>
+                <a href="/view-result" class="r1">view result</a>
+            </div>
+            <div class="special r1" style="color: #ffff; font-size: 20px;">
+                <i class="fa-solid fa-download" style="color: #ffff; font-size: 20px;"></i>
+                <a href="/download" class="r1">download</a>
+            </div>
+        <%}%>
         <div class="special r1" style="color: #ffff; font-size: 20px;">
             <i class="fa-solid fa-user-plus"></i>
             <a href="/sign-up" class="r1">SignUp</a>
         </div>
-        <div class="special r1" style="color: #ffff; font-size: 20px;">
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            <a href="/login" class="r1">login</a>
-        </div>
+        <% if(authentication) {%>
+            <div class="special r1" style="color: #ffff; font-size: 20px;">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="/logout" class="r1">logout</a>
+            </div>
+        <%} else{%>
+            <div class="special r1" style="color: #ffff; font-size: 20px;">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="/login" class="r1">login</a>
+            </div>
+        <%}%>
     </div>
     <div class="right">
         <div id="r2">Result Portal</div>

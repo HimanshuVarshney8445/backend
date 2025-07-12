@@ -1,5 +1,6 @@
 exports.addResult = (req,res,next)=>{
-    res.render('host/add-result',{pageTitle: "Add Result"});
+    const authent = req.cookies.token;
+    res.render('host/add-result',{pageTitle: "Add Result",authentication: authent});
 }
 
 exports.addPostResult = (req,res,next)=>{

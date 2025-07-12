@@ -1,7 +1,9 @@
 exports.dashboard = (req,res,next)=>{
-    res.render('store/home',{pageTitle: "Dashboard"});
+    const authent = req.cookies.token;
+    res.render('store/home',{pageTitle: "Dashboard",authentication: authent});
 }
 
 exports.viewResult = (req, res, next)=>{
-    res.render('store/viewResult', {pageTitle: "View Result"});
+    const authent = req.cookies.token;
+    res.render('store/viewResult', {pageTitle: "View Result",authentication: authent});
 }
