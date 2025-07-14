@@ -11,6 +11,7 @@ exports.protect = (req, res, next) => {
         req.user = decoded;
         next();
     } catch (error) {
-        return res.status(401).send("Unauthorized: Invalid token");
+        res.clearCookie("token");
+        return res.redirect("/login");
     }
 }
