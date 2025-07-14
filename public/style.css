@@ -16,7 +16,8 @@
     width: 100%;
     display: flex;
     align-items: center;
-    background-color: rgb(95, 199, 244);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 .lower_box{
     height: 93%;
@@ -145,12 +146,24 @@
     border: 1px solid grey;
     box-shadow: 3px 5px 21px grey;
 }
+input {
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    background: #f7fcff;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #5fc7f4;
+    outline: none;
+}
 .result_text{
     height: 1.7rem;
     width: 15rem;
     padding-left: 5px;
     border-radius: 5px;
-    border: 1px solid grey;
 }
 .result_para{
     font-size: 25px;
