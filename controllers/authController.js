@@ -15,28 +15,39 @@ exports.getLogin = (req,res,next)=>{
 
 exports.postLogin = async (req,res,next)=>{
     const {email,password} = req.body;
+    const authent = req.cookies.token;
     const user = await User.findOne({email});
-    if(!user){
-        return res.status(401).render("auth/login", {
+    try{
+        if(!user){
+            return res.status(401).render("auth/login", {
+                pageTitle: "Login",
+                oldInput: {email},
+                authentication: authent
+            })
+        }
+        const isMatch = await bcrypt.compare(password, user.password);
+        if(!isMatch){
+            return res.render("auth/login",{
+                pageTitle: "Login",
+                oldInput: {email},
+                authentication: authent,
+            })
+        }
+        const token = generateToken(user);
+        res.cookie('token', token, {
+            httpOnly: true,
+            maxAge: 3600000
+        });
+        return res.redirect("/");
+    }catch(err){
+        console.error("Error during login:", err);
+        res.status(500).render("auth/login", {
             pageTitle: "Login",
-            oldInput: {email}
-        })
+            oldInput: {email},
+            authentication: authent
+        });
     }
-    const isMatch = await bcrypt.compare(password, user.password);
-    if(!isMatch){
-        return res.render("auth/login",{
-            pageTitle: "Login",
-            oldInput: {email}
-        })
-    }
-    const token = generateToken(user);
-    res.cookie('token', token, {
-        httpOnly: true,
-    });
 
-    // console.log("UserName:",email);
-    // console.log("Password:",password);
-    res.redirect("/");
 }
 
 exports.getSignUp = (req,res,next)=>{
@@ -68,5 +79,6 @@ exports.postSignUp = async (req,res,next)=>{
 
 exports.getLogout = (req,res,next)=>{
     res.clearCookie('token');
+
     res.redirect("/login");
 }
