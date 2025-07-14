@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 .container{
+    background-image: url('/school-image-750x420.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
 }
@@ -31,6 +35,8 @@
     align-items: center;
     justify-content: center;
     border: 2px solid grey;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
     transition: all 0.35s ease-in-out;
 }
 
@@ -40,8 +46,9 @@
 }
 
 .left{
+    padding-left: 1.5rem;
     display: flex;
-    justify-content: space-around;
+    gap: 4.5rem;
     width: 70%;
 }
 .right{
@@ -133,6 +140,8 @@
     flex-direction: column;
     gap: 3rem;
     border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(14px);
     border: 1px solid grey;
     box-shadow: 3px 5px 21px grey;
 }
@@ -216,11 +225,4 @@
 
 .marks-submit-btn:hover {
     background-color: #218838;
-}
-.content {
-    /* ...existing code... */
-    background-image: url('/school-image-750x420.jpg'); /* or '/images/school-image-750x420.jpg' */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
