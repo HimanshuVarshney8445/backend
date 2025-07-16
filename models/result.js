@@ -1,8 +1,24 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const viewResult = new mongoose.Schema({
-    
-    
-})
+const studentResultSchema = new mongoose.Schema({
+  batch: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Batch",
+    required: true
+  },
+  studentName: {
+    type: String,
+    required: true
+  },
+  rollNumber: {
+    type: String,
+    required: true
+  },
+  marks: {
+    type: Map, 
+    of: Number,
+    required: true
+  }
+});
 
-module.exports = mongoose.model('View', viewResult);
+exports.module = mongoose.model("StudentResult", studentResultSchema);
