@@ -57,7 +57,7 @@ exports.getSignUp = (req,res,next)=>{
 
 exports.postSignUp = async (req,res,next)=>{
     try{
-        const {firstName,lastName,email,password} = req.body;
+        const {firstName,lastName,email,password,role} = req.body;
         const exist = await User.findOne({email});
         const hashPassword = await bcrypt.hash(password,12);
         if(exist){
@@ -67,7 +67,8 @@ exports.postSignUp = async (req,res,next)=>{
             firstName,
             lastName,
             email,
-            password: hashPassword
+            password: hashPassword,
+            role
         });
         await newUser.save();
         res.redirect("/login");
