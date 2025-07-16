@@ -4,7 +4,29 @@
     <div class="container">
         <%- include('../partials/nav') %>
         </div>
-        
+        <div class="profile_lower">
+            <div class="pro_heading">
+                <h1 style="font-size: 40px;">User Profile</h1>
+            </div>
+            <div class="pro_content">
+                    <form action="/profile-update/<%= user._id %>" method="POST">
+                        <div class="pro_button">
+                            <div class="pro_details">
+                                <p style="color: white;">First Name:</p>
+                                <input type="text" style="width: 400px;" name="firstName" value="<%= user.firstName %>">
+                                <p style="color: white;">Last Name:</p>
+                                <input type="text" style="width: 400px;" name="lastName" value="<%= user.lastName %>"> 
+                                <p style="color: white;">Email:</p>
+                                <input type="text" style="width: 400px; margin-bottom: 2rem;" name="email" value="<%= user.email %>">
+                            </div>
+                            <div style="padding-left: 7.9rem;">
+                                <button type="submit" style="height: 30px; width: 120px; border-radius: 30px; border: none; background-color: #5fc7f4; color: white;">Update Profile</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
