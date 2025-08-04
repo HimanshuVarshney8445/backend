@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 exports.dashboard = async (req,res,next)=>{
     const authent = req.cookies.token;
-    res.render('store/home',{pageTitle: "Dashboard",authentication: authent, });
+    res.render('store/home',{pageTitle: "Dashboard",authentication: authent});
 }
 
 exports.viewResult = async (req, res, next)=>{

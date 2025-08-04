@@ -1,9 +1,10 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
 const batchSchema = new mongoose.Schema({
   className: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   subjects: {
     type: [String],
@@ -15,4 +16,4 @@ const batchSchema = new mongoose.Schema({
   }
 });
 
-exports.module = mongoose.model("Batch", batchSchema);
+module.exports = mongoose.model("Batch", batchSchema);
